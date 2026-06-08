@@ -25,7 +25,7 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'
+          isScrolled ? 'bg-white shadow-lg py-1' : 'bg-transparent py-5'
         }`}
       >
         <div className="container-custom flex justify-between items-center">
@@ -79,7 +79,7 @@ const Navbar = () => {
               className="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl z-50 lg:hidden"
             >
               <div className="p-6">
-                <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-4 right-4 text-2xl">
+                <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-4 right-4 text-2xl text-roseGold-500 hover:text-roseGold-700 transition-colors">
                   <FiX />
                 </button>
                 <div className="mt-12 flex flex-col space-y-6">
@@ -93,7 +93,7 @@ const Navbar = () => {
                       {link}
                     </a>
                   ))}
-                  <a href="#contact" className="btn-primary w-full text-center">Book Consultation</a>
+                  <a href="#contact"  onClick={() => setIsMobileMenuOpen(false)} className="btn-primary w-full text-center">Book Consultation</a>
                 </div>
               </div>
             </motion.div>
