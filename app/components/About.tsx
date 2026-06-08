@@ -9,7 +9,7 @@ const About = () => {
       setReadMore(!readMore);
     }
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-navy text-white">
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -37,11 +37,11 @@ const About = () => {
           >
             <div className="mb-4">
               <span className="text-roseGold-500 font-semibold tracking-wide uppercase text-sm">About Us</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-navy mt-2">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-gold mt-2">
                 Strategic Partners in Business Growth
               </h2>
             </div>
-            <p className="text-mutedText leading-relaxed mb-6 text-sm">
+            <p className=" leading-relaxed mb-6 text-sm">
               Amanah Corporate Advisory is a strategic business setup and corporate advisory firm supporting clients in establishing and expanding businesses across the UAE and international markets. We provide tailored solutions designed to simplify complex regulatory processes and accelerate business growth.
             </p>
             {!readMore &&
@@ -50,7 +50,7 @@ const About = () => {
             </button>
 }
 { readMore &&
-            <p className="text-mutedText leading-relaxed mb-8 text-sm">
+            <p className=" leading-relaxed mb-8 text-sm">
               With deep expertise in local regulations and international best practices, we bridge the gap between vision and execution, ensuring your business journey is seamless, compliant, and successful.
             </p>
 }
@@ -62,11 +62,11 @@ const About = () => {
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
                 <div className="text-3xl font-bold text-roseGold-500">500+</div>
-                <div className="text-darkText font-medium">Businesses Established</div>
+                <div className=" font-medium">Businesses Established</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-roseGold-500">30+</div>
-                <div className="text-darkText font-medium">Countries Served</div>
+                <div className=" font-medium">Countries Served</div>
               </div>
             </div>
             <button className="btn-secondary">Learn More About Us</button>

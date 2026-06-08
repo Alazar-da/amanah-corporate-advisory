@@ -11,8 +11,17 @@ const Locations = () => {
   }
 
   return (
-    <section id="locations" className="py-24 bg-white">
+    <section id="locations" className="py-24 bg-navy text-white relative">
+      <div className="absolute inset-0 opacity-5 overflow-hidden">
+  <div className="absolute top-0 left-0 w-full h-full">
+    <div className="absolute top-10 left-10 w-40 h-40 border-l-2 border-t-2 border-roseGold-500"></div>
+    <div className="absolute bottom-10 right-10 w-60 h-60 border-r-2 border-b-2 border-roseGold-500"></div>
+    
+  </div>
+</div>
+
       <div className="container-custom">
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -21,7 +30,7 @@ const Locations = () => {
           className="text-center mb-16"
         >
           <span className="text-roseGold-500 font-semibold tracking-wider uppercase text-sm">Global Reach</span>
-          <h2 className="text-5xl md:text-6xl font-heading font-bold text-navy mt-3">
+          <h2 className="text-5xl md:text-6xl font-heading font-bold text-gold mt-3">
             Our Jurisdictions
           </h2>
           <div className="w-16 h-px bg-roseGold-500 mx-auto mt-6"></div>
@@ -42,12 +51,12 @@ const Locations = () => {
         ${index === 2 ? 'md:items-start' : ''}
       `}
     >
-      <h3 className="text-2xl font-heading font-bold text-navy mb-6 pb-2 border-b border-roseGold-500 inline-block">
+      <h3 className="text-2xl font-heading font-bold text-gold mb-6 pb-2 border-b border-roseGold-500 inline-block">
         {region}
       </h3>
       <ul className="space-y-3">
         {cities.map((city, idx) => (
-          <li key={idx} className="text-mutedText hover:text-roseGold-500 transition-colors text-sm md:text-base">
+          <li key={idx} className=" hover:text-roseGold-500 transition-colors text-sm md:text-base">
             {city}
           </li>
         ))}

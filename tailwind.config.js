@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         navy: '#0B1F3B',
+        gold:'#D4AF37',
          roseGold: {
           50: '#FDF5F6',
           100: '#F9E6E8',

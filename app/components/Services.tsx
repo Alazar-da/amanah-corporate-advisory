@@ -51,7 +51,7 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="py-24 bg-lightGray">
+    <section id="services" className="py-24 bg-navy text-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,15 +60,16 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+
           <span className="text-roseGold-500 font-semibold tracking-wider uppercase text-sm">Expertise</span>
-          <h2 className="text-5xl md:text-6xl font-heading font-bold text-navy mt-3">
+          <h2 className="text-5xl md:text-6xl font-heading font-bold text-gold mt-3">
             What We Do
           </h2>
           <div className="w-16 h-px bg-roseGold-500 mx-auto mt-6"></div>
         </motion.div>
 
         {/* Horizontal Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-1 mb-12 border-b border-gray-200">
+        <div className="flex flex-wrap justify-center gap-1 mb-12">
           {services.map((service, index) => (
             <button
               key={index}
@@ -76,7 +77,7 @@ const Services = () => {
               className={`px-6 py-3 text-base font-medium transition-all duration-300 relative ${
                 activeService === index 
                   ? 'text-roseGold-500' 
-                  : 'text-mutedText hover:text-navy'
+                  : 'text-white hover:text-gold'
               }`}
             >
               {service.title}
@@ -100,18 +101,25 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto relative"
           >
+            <div className="absolute inset-0 opacity-5">
+  <svg className="absolute top-0 left-0 w-full h-full" preserveAspectRatio="none">
+    <path d="M0,100 Q100,0 200,100 T400,100 T600,100 T800,100" stroke="#B76E79" strokeWidth="2" fill="none"/>
+    <path d="M0,200 Q150,100 300,200 T600,200 T900,200" stroke="#B76E79" strokeWidth="2" fill="none"/>
+    <path d="M0,300 Q200,200 400,300 T800,300" stroke="#B76E79" strokeWidth="2" fill="none"/>
+  </svg>
+</div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* Left Column - Icon and Description */}
               <div>
                 <div className="text-roseGold-500 text-6xl mb-6">
                   {services[activeService].icon}
                 </div>
-                <h3 className="text-3xl font-heading font-bold text-navy mb-4">
+                <h3 className="text-3xl font-heading font-bold text-gold mb-4">
                   {services[activeService].title}
                 </h3>
-                <p className="text-mutedText text-base md:text-lg leading-relaxed mb-6">
+                <p className="text-white text-base md:text-lg leading-relaxed mb-6">
                   {services[activeService].description}
                 </p>
                 <button className="text-roseGold-500 font-semibold inline-flex items-center gap-2 group">
@@ -121,15 +129,15 @@ const Services = () => {
               </div>
 
               {/* Right Column - Features List */}
-              <div className="bg-white p-8">
-                <h4 className="text-xl font-heading font-semibold text-navy mb-6">
+              <div className="bg-roseGold-500/10 rounded-lg p-8">
+                <h4 className="text-xl font-heading font-semibold text-gold mb-6">
                   Key Services
                 </h4>
                 <ul className="space-y-4">
                   {services[activeService].features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm md:text-base text-mutedText">
+                    <li key={idx} className="flex items-start gap-3 text-sm md:text-base text-white">
                       <span className="text-roseGold-500 mt-1">•</span>
-                      <span className="text-mutedText">{feature}</span>
+                      <span className="text-white">{feature}</span>
                     </li>
                   ))}
                 </ul>

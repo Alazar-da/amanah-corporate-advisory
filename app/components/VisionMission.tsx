@@ -5,7 +5,7 @@ import { FaEye, FaBullseye, FaHandshake, FaArrowRight } from 'react-icons/fa';
 
 const VisionMission = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-navy text-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-roseGold-500/5 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-navy/5 to-transparent rounded-full blur-3xl"></div>
@@ -20,7 +20,7 @@ const VisionMission = () => {
           className="text-center mb-20"
         >
           <span className="text-roseGold-500 font-semibold tracking-wider uppercase text-sm">Our Philosophy</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-navy mt-3">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gold mt-3">
             Vision & Mission
           </h2>
           <div className="w-16 h-px bg-roseGold-500 mx-auto mt-6"></div>
@@ -44,10 +44,10 @@ const VisionMission = () => {
                 <div className="text-roseGold-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-500 inline-block">
                   <FaEye />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-6">
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-gold mb-6">
                   Our Vision
                 </h3>
-                <p className="text-mutedText text-base md:text-lg leading-relaxed">
+                <p className=" text-base md:text-lg leading-relaxed">
                   To become a trusted regional and international business advisory firm recognized for helping entrepreneurs, investors, and corporations establish strong foundations, unlock new opportunities, and achieve sustainable growth across global markets.
                 </p>
               </div>
@@ -70,10 +70,10 @@ const VisionMission = () => {
               <div className="text-roseGold-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-500 inline-block">
                 <FaBullseye />
               </div>
-              <h3 className="text-3xl md:text-4xl font-heading font-bold text-navy mb-6">
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-gold mb-6">
                 Our Mission
               </h3>
-              <p className="text-mutedText text-base md:text-lg leading-relaxed">
+              <p className=" text-base md:text-lg leading-relaxed">
                 To provide reliable, transparent, and professional business solutions that simplify company formation, banking, residency, and corporate services while building lasting relationships founded on trust and excellence.
               </p>
             </div>
@@ -130,8 +130,8 @@ const VisionMission = () => {
           </div>
           
           {/* Decorative bottom line */}
-          <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent"></div>
-        </motion.div>
+          {/* <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+       */}  </motion.div>
       </div>
     </section>
   );

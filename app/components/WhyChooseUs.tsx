@@ -18,7 +18,18 @@ const WhyChooseUs = () => {
   ]
 
   return (
-    <section className="py-24 bg-navy">
+    <section className="py-24 bg-navy relative">
+      <div className="absolute inset-0 opacity-5">
+  <div className="absolute top-10 left-10">
+    <div className="w-0 h-0 border-l-[40px] border-l-transparent border-r-[40px] border-r-transparent border-b-[69px] border-b-roseGold-500"></div>
+  </div>
+  <div className="absolute bottom-20 right-20 transform rotate-180">
+    <div className="w-0 h-0 border-l-[60px] border-l-transparent border-r-[60px] border-r-transparent border-b-[104px] border-b-roseGold-500"></div>
+  </div>
+  <div className="absolute top-1/4 right-20 transform rotate-90">
+    <div className="w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[52px] border-b-roseGold-500"></div>
+  </div>
+</div>
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

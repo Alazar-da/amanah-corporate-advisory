@@ -15,8 +15,14 @@ const Process = () => {
   ]
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container-custom">
+    <section className="py-24 bg-navy text-white">
+
+      <div className="container-custom relative">
+        <div className="absolute inset-0 opacity-5">
+  <div className="absolute top-0 left-0 w-72 h-72 bg-roseGold-500 rounded-full filter blur-3xl"></div>
+  <div className="absolute bottom-0 right-0 w-96 h-96 bg-roseGold-500 rounded-full filter blur-3xl"></div>
+  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-roseGold-500 rounded-full filter blur-2xl"></div>
+</div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,8 +30,9 @@ const Process = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+
           <span className="text-roseGold-500 font-semibold tracking-wider uppercase text-sm">Simple Process</span>
-          <h2 className="text-5xl md:text-6xl font-heading font-bold text-navy mt-3">
+          <h2 className="text-5xl md:text-6xl font-heading font-bold text-gold mt-3">
             How We Work
           </h2>
           <div className="w-16 h-px bg-roseGold-500 mx-auto mt-6"></div>
@@ -54,8 +61,8 @@ const Process = () => {
               {/* Content */}
               <div>
                 <div className="text-roseGold-500 text-2xl mb-2">{step.icon}</div>
-                <h3 className="text-xl font-heading font-bold text-navy mb-2">{step.title}</h3>
-                <p className="text-mutedText leading-relaxed">{step.description}</p>
+                <h3 className="text-xl font-heading font-bold text-gold mb-2">{step.title}</h3>
+                <p className=" leading-relaxed">{step.description}</p>
               </div>
             </motion.div>
           ))}

@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h2 className="flex gap-2 text-2xl font-heading font-bold mb-4 items-center justify-start">
+            <h2 className="flex gap-2 text-2xl font-heading font-bold mb-4 items-center justify-start text-gold">
                            <Image 
                 src="/logo3.png" 
                 alt="Amanah Corporate Advisory" 
