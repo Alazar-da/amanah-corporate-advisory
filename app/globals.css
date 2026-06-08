@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-darkText bg-white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-roseGold-500 to-roseGold-600 text-white font-semibold rounded-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-roseGold-500 text-roseGold-500 font-semibold rounded-md transition-all duration-300 hover:bg-roseGold-500 hover:text-white hover:-translate-y-0.5;
+}
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20;
+  }
+  .premium-card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2;
+  }
+}
+
+/* Add to your existing globals.css */
+
+@layer components {
+  /* New Premium Card Styles */
+  .luxury-card {
+    @apply relative bg-white rounded-2xl overflow-hidden transition-all duration-500;
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .luxury-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: linear-gradient(135deg, rgba(200, 162, 74, 0.05) 0%, rgba(200, 162, 74, 0) 100%);
+  }
+  
+  .luxury-card:hover::before {
+    @apply opacity-100;
+  }
+  
+  .gold-border-card {
+    @apply relative bg-white rounded-2xl transition-all duration-500;
+    border: 1px solid rgba(200, 162, 74, 0.2);
+  }
+  
+  .gold-border-card:hover {
+    border-color: rgba(200, 162, 74, 0.6);
+    box-shadow: 0 20px 40px -15px rgba(200, 162, 74, 0.15);
+    transform: translateY(-5px);
+  }
+  
+  /* Team Member Premium Card */
+  .team-card {
+    @apply relative overflow-hidden rounded-2xl transition-all duration-700;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
+  
+  .team-card::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-roseGold-500 to-roseGold-500/30 transform scale-x-0 transition-transform duration-500;
+    transform-origin: left;
+  }
+  
+  .team-card:hover::after {
+    @apply scale-x-100;
+  }
+  
+  .team-image-wrapper {
+    @apply relative overflow-hidden rounded-t-2xl;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  
+  /* Service Card */
+  .service-card {
+    @apply relative bg-white rounded-2xl p-8 transition-all duration-500 cursor-pointer;
+    border: 1px solid rgba(200, 162, 74, 0.15);
+  }
+  
+  .service-card:hover {
+    @apply shadow-2xl;
+    border-color: rgba(200, 162, 74, 0.4);
+    transform: translateY(-8px);
+  }
+  
+  .service-icon {
+    @apply relative w-20 h-20 rounded-2xl flex items-center justify-center text-3xl transition-all duration-500 mb-6;
+    background: linear-gradient(135deg, rgba(200, 162, 74, 0.1) 0%, rgba(200, 162, 74, 0.05) 100%);
+    color: #C8A24A;
+  }
+  
+  .service-card:hover .service-icon {
+    background: linear-gradient(135deg, #C8A24A 0%, #E2C28B 100%);
+    color: white;
+    transform: scale(1.05) rotate(5deg);
+  }
+  
+  /* Stat Card */
+  .stat-card {
+    @apply relative backdrop-blur-md rounded-2xl p-6 text-center transition-all duration-500;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .stat-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-5px);
+    border-color: rgba(200, 162, 74, 0.4);
+  }
+}
