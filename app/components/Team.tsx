@@ -6,13 +6,13 @@ import { FaLinkedinIn, FaTwitter, FaEnvelope } from 'react-icons/fa'
 
 const Team = () => {
   const teamMembers = [
-    {
+    /* {
       name: 'Sophia Abdella',
       role: 'Founder & Senior Business Advisor',
       description: 'Strategic advisor specializing in business setup, corporate structuring, and international expansion with over 15 years of experience in UAE markets.',
       image: '/Sophia.jpg',
       expertise: ['Business Strategy', 'Corporate Law', 'International Expansion'],
-    },
+    }, */
     {
       name: 'Hindiya Khelil',
       role: 'Marketing Specialist',
