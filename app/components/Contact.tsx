@@ -17,7 +17,7 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     alert('Thank you for your message. We will contact you shortly.');
     setFormData({ name: '', company: '', email: '', phone: '', service: '', message: '' });
@@ -147,7 +147,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 placeholder="Your Message *"
-                rows="5"
+                rows={5}
                 value={formData.message}
                 onChange={handleChange}
                 required
