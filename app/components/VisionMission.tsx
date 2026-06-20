@@ -47,7 +47,7 @@ const VisionMission = () => {
                 <h3 className="text-3xl md:text-4xl font-heading font-bold text-gold mb-6">
                   Our Vision
                 </h3>
-                <p className=" text-base md:text-lg leading-relaxed">
+                <p className="text-sm md:text-base leading-relaxed">
                   To become a trusted regional and international business advisory firm recognized for helping entrepreneurs, investors, and corporations establish strong foundations, unlock new opportunities, and achieve sustainable growth across global markets.
                 </p>
               </div>
@@ -73,7 +73,7 @@ const VisionMission = () => {
               <h3 className="text-3xl md:text-4xl font-heading font-bold text-gold mb-6">
                 Our Mission
               </h3>
-              <p className=" text-base md:text-lg leading-relaxed">
+              <p className="text-sm md:text-base leading-relaxed">
                 To provide reliable, transparent, and professional business solutions that simplify company formation, banking, residency, and corporate services while building lasting relationships founded on trust and excellence.
               </p>
             </div>

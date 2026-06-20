@@ -9,8 +9,11 @@ import {
 
 const WhyChooseUs = () => {
   const features = [
-    { icon: <FiAward />, title: '15+ Years Excellence', description: 'Decades of proven expertise in UAE business setup and corporate advisory.' },
-    { icon: <FiCheckCircle />, title: 'End-to-End Solutions', description: 'Complete business setup services from licensing to banking and beyond.' },
+    {
+  icon: <FiAward />,
+  title: 'Professional Excellence',
+  description: 'Committed to delivering high-quality business setup and corporate advisory services across the UAE.',
+},  { icon: <FiCheckCircle />, title: 'End-to-End Solutions', description: 'Complete business setup services from licensing to banking and beyond.' },
     { icon: <FiGlobe />, title: 'Global Network', description: 'Strategic partnerships across 30+ countries worldwide.' },
     { icon: <FiZap />, title: 'Fast Processing', description: 'Streamlined processes for quick company setup and approvals.' },
     { icon: <FiUsers />, title: 'Client-First Approach', description: 'Personalized strategies tailored to your unique business goals.' },
@@ -39,7 +42,7 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <span className="text-roseGold-500 font-semibold tracking-wider uppercase text-sm">The Difference</span>
-          <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mt-3">
+          <h2 className="text-5xl md:text-6xl font-heading font-bold text-gold mt-3">
             Why Choose Us
           </h2>
           <div className="w-16 h-px bg-roseGold-500 mx-auto mt-6"></div>

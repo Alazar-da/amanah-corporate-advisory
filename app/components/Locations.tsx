@@ -149,20 +149,34 @@ const Locations = () => {
           </AnimatePresence>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 mt-10">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-roseGold-500">30+</div>
-              <div className="text-xs text-gray-400">Countries</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-roseGold-500">7</div>
-              <div className="text-xs text-gray-400">UAE Emirates</div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-roseGold-500">5</div>
-              <div className="text-xs text-gray-400">Offshore Centers</div>
-            </div>
-          </div>
+     <div className="grid grid-cols-3 gap-4 mt-10">
+  <div className="text-center">
+    <div className="text-2xl font-bold text-roseGold-500">
+      Global
+    </div>
+    <div className="text-xs text-gray-400">
+      Business Reach
+    </div>
+  </div>
+
+  <div className="text-center">
+    <div className="text-2xl font-bold text-roseGold-500">
+      7
+    </div>
+    <div className="text-xs text-gray-400">
+      UAE Emirates
+    </div>
+  </div>
+
+  <div className="text-center">
+    <div className="text-2xl font-bold text-roseGold-500">
+      Tailored
+    </div>
+    <div className="text-xs text-gray-400">
+      Advisory Solutions
+    </div>
+  </div>
+</div>
         </div>
       </div>
     </section>

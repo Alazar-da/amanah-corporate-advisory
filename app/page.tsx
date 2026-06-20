@@ -15,6 +15,7 @@ import CTA from './components/CTA'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import { Toaster } from 'react-hot-toast'
 
 export default function Home() {
   return (
@@ -34,6 +35,10 @@ export default function Home() {
       <Contact />
       <Footer />
       <ScrollToTop />
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
     </main>
   )
 }

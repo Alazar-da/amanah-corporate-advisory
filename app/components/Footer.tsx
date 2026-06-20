@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <h2 className="flex gap-2 text-2xl font-heading font-bold mb-4 items-center justify-start text-gold">
                            <Image 
-                src="/logo3.png" 
+                src="/logo3.jpg" 
                 alt="Amanah Corporate Advisory" 
                 width={90} 
                 height={45} 
@@ -73,8 +73,27 @@ const Footer = () => {
             <h3 className="text-lg font-heading font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-3 text-gray-400">
               <li>Dubai World Trade Center, UAE</li>
-              <li>+971 50 447 6610</li>
-              <li>info@amanahadvisory.com</li>
+              <ul className="space-y-2">
+  <li>
+    <a
+      href="https://wa.me/971504476610"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-roseGold-500 transition-colors"
+    >
+      +971 50 447 6610
+    </a>
+  </li>
+
+  <li>
+    <a
+      href="mailto:info@amanahcorporateadvisory.com"
+      className="hover:text-roseGold-500 transition-colors"
+    >
+      info@amanahcorporateadvisory.com
+    </a>
+  </li>
+</ul>
             </ul>
           </div>
         </div>

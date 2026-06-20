@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaMapMarkerAlt, FaLinkedinIn, FaInstagram, FaFacebookF } from 'react-icons/fa';
-
+import { toast  } from 'react-hot-toast';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,17 +11,48 @@ const Contact = () => {
     phone: '',
     service: '',
     message: '',
-  });
+  }); 
+ const [isLoading, setIsLoading] = useState(false);
+const [isSuccess, setIsSuccess] = useState(false);
 
   const handleChange = (e:any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e:any) => {
-    e.preventDefault();
-    alert('Thank you for your message. We will contact you shortly.');
-    setFormData({ name: '', company: '', email: '', phone: '', service: '', message: '' });
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsLoading(true)
+
+
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    toast.success('Thank you for your message. We will contact you shortly.');
+    setIsLoading(false);
+    setIsSuccess(true);
+
+
+    setFormData({
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+      service: '',
+      message: '',
+    });
+  } else {
+    setIsLoading(false)
+    toast.error('Failed to send message.');
+  }
+};
 
   const contactInfo = [
     { icon: <FaPhoneAlt />, text: '+971 50 447 6610', href: 'tel:+971504476610' },
@@ -176,9 +207,32 @@ const Contact = () => {
                 required
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-roseGold-500 transition-colors text-white placeholder:text-gray-400 resize-none"
               ></textarea>
-              <button type="submit" className="btn-primary w-full py-3 text-lg">
-                Request Consultation
-              </button>
+            <button 
+  type="submit" 
+  className={`btn-primary w-full py-3 text-lg flex items-center justify-center gap-3 transition-all duration-300 ${
+    isSuccess ? 'bg-green-500 hover:bg-green-600' : ''
+  }`}
+  disabled={isLoading || isSuccess}
+>
+  {isLoading ? (
+    <>
+      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      Sending...
+    </>
+  ) : isSuccess ? (
+    <>
+      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+      </svg>
+      Message Sent!
+    </>
+  ) : (
+    'Request Consultation'
+  )}
+</button>
             </form>
           </motion.div>
         </div>

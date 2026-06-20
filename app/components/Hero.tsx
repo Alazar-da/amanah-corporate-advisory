@@ -5,12 +5,28 @@ import { motion } from 'framer-motion'
 import { FiBriefcase, FiGlobe, FiShield, FiUserCheck } from 'react-icons/fi'
 
 const Hero = () => {
-  const stats = [
-    { icon: <FiBriefcase />, title: 'UAE Business Setup', value: '500+' },
-    { icon: <FiGlobe />, title: 'Global Expansion', value: '30+' },
-    { icon: <FiShield />, title: 'Banking Solutions', value: '100%' },
-    { icon: <FiUserCheck />, title: 'Residency Services', value: 'Expert' },
-  ]
+const stats = [
+  {
+    icon: <FiBriefcase />,
+    title: 'UAE Business Setup',
+    value: 'Expert Guidance',
+  },
+  {
+    icon: <FiGlobe />,
+    title: 'Global Expansion',
+    value: 'International Solutions',
+  },
+  {
+    icon: <FiShield />,
+    title: 'Banking Solutions',
+    value: 'Trusted Support',
+  },
+  {
+    icon: <FiUserCheck />,
+    title: 'Residency Services',
+    value: 'Personalized Guidance',
+  },
+];
 
   return (
     <section
@@ -33,7 +49,7 @@ const Hero = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 md:mb-6 tracking-tight">
             AMANAH CORPORATE
             <br className="hidden md:block" />
-            <span className="text-roseGold-500"> ADVISORY</span>
+            <span className=""> ADVISORY</span>
           </h1>
 
           {/* Subheading */}
@@ -57,7 +73,7 @@ const Hero = () => {
           </div>
 
           {/* Stats Grid - Responsive */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto px-4">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
@@ -69,10 +85,10 @@ const Hero = () => {
                 <div className="text-roseGold-500 text-2xl sm:text-3xl mb-2 flex justify-center">
                   {stat.icon}
                 </div>
-                <div className="text-xs sm:text-sm text-gray-200 uppercase tracking-wide">
+                <div className="text-sm sm:text-md text-gray-200 uppercase tracking-wide">
                   {stat.title}
                 </div>
-                <div className="text-lg sm:text-xl font-bold text-white">
+                <div className="text-white text-xs sm:text-sm mt-1">
                   {stat.value}
                 </div>
               </motion.div>

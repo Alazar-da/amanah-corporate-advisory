@@ -59,16 +59,25 @@ const About = () => {
              Show Less
             </button>
 }
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              <div>
-                <div className="text-3xl font-bold text-roseGold-500">500+</div>
-                <div className=" font-medium">Businesses Established</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-roseGold-500">30+</div>
-                <div className=" font-medium">Countries Served</div>
-              </div>
-            </div>
+       <div className="grid grid-cols-2 gap-6 mb-8">
+  <div className='flex flex-col gap-1'>
+    <div className="text-3xl font-bold text-roseGold-500">
+      Strategic
+    </div>
+    <div className="text-sm">
+      Business Formation
+    </div>
+  </div>
+
+  <div className='flex flex-col gap-1'>
+    <div className="text-3xl font-bold text-roseGold-500">
+      International
+    </div>
+    <div className="text-sm">
+      Growth Support
+    </div>
+  </div>
+</div>
             <button className="btn-secondary">Learn More About Us</button>
           </motion.div>
         </div>

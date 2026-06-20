@@ -30,14 +30,13 @@ const Navbar = () => {
       >
         <div className="container-custom flex justify-between items-center">
       <div className="flex items-center">
-  <Image 
-    src={`${isScrolled ? '/logoDark1.png' : '/logo3.png'}`}
-    alt="Amanah Corporate Advisory" 
-    width={90} 
-    height={45} 
-    className="object-contain"
-    priority
-  />
+<img
+  src={isScrolled ? "/logoDark1.jpg" : "/logo3.jpg"}
+  alt="Amanah Corporate Advisory"
+  width={90}
+  height={45}
+  className="object-contain"
+/>
 </div>
 
           <div className="hidden lg:flex items-center space-x-8">
