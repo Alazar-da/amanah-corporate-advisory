@@ -23,8 +23,8 @@ export async function POST(req: Request) {
       await req.json();
 
     const { data, error }  = await resend.emails.send({
-      from: 'amanah@resend.dev',
-      to: 'alazar.damena01@gmail.com',
+      from: 'AMANAH <info@amanahcorporateadvisory.com>',
+      to: 'info@amanahcorporateadvisory.com',
       subject: `New Contact Form Submission - ${service || 'General Inquiry'}`,
  html: `
   <!DOCTYPE html>
