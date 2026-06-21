@@ -1,4 +1,4 @@
-/* import { Resend } from 'resend';
+import { Resend } from 'resend';
 
 
 export const runtime = 'nodejs';
@@ -227,11 +227,11 @@ return Response.json(
   }
 );
   }
-} */
+}
 
-export async function GET() {
+/* export async function GET() {
   return Response.json({
     success: true,
     message: 'working',
   });
-}
+} */
