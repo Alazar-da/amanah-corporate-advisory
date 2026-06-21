@@ -213,20 +213,21 @@ return Response.json(
     headers: corsHeaders,
   }
 );
-  } catch (error) {
-    console.error(error);
+  } catch (error: any) {
+  console.error('CONTACT API ERROR:', error);
 
-return Response.json(
-  {
-    success: false,
-    message: 'Failed to send email',
-  },
-  {
-    status: 500,
-    headers: corsHeaders,
-  }
-);
-  }
+  return Response.json(
+    {
+      success: false,
+      message: error?.message || 'Failed to send email',
+      error: String(error),
+    },
+    {
+      status: 500,
+      headers: corsHeaders,
+    }
+  );
+}
 }
 
 /* export async function GET() {
