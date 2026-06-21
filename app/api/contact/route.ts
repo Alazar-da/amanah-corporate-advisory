@@ -2,26 +2,16 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://amanahcorporateadvisory.com',
-];
-
-const getCorsHeaders = (request: Request) => {
-  const origin = request.headers.get('origin');
-  const matchedOrigin = origin && allowedOrigins.includes(origin) ? origin : '';
-
-  return {
-    'Access-Control-Allow-Origin': matchedOrigin,
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-  };
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
 };
 
-export async function OPTIONS(req: Request) {
+export async function OPTIONS() {
   return new Response(null, {
     status: 200,
-    headers: getCorsHeaders(req),
+    headers: corsHeaders,
   });
 }
 
@@ -203,7 +193,7 @@ return Response.json(
   },
   {
     status: 500,
-      headers: getCorsHeaders(req),
+    headers: corsHeaders,
   }
 );
 }
@@ -218,7 +208,7 @@ return Response.json(
     data,
   },
   {
-      headers: getCorsHeaders(req),
+    headers: corsHeaders,
   }
 );
   } catch (error) {
@@ -231,7 +221,7 @@ return Response.json(
   },
   {
     status: 500,
-       headers: getCorsHeaders(req),
+    headers: corsHeaders,
   }
 );
   }
