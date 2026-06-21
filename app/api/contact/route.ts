@@ -2,6 +2,29 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://amanahcorporateadvisory.com',
+];
+
+const getCorsHeaders = (request: Request) => {
+  const origin = request.headers.get('origin');
+  const matchedOrigin = origin && allowedOrigins.includes(origin) ? origin : '';
+
+  return {
+    'Access-Control-Allow-Origin': matchedOrigin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+};
+
+export async function OPTIONS(req: Request) {
+  return new Response(null, {
+    status: 200,
+    headers: getCorsHeaders(req),
+  });
+}
+
 export async function POST(req: Request) {
   try {
     const { name, company, email, phone, service, message } =
@@ -173,34 +196,43 @@ export async function POST(req: Request) {
     });
 
     if (error) {
-  return Response.json(
-    {
-      success: false,
-      error,
-    },
-    { status: 500 }
-  );
+return Response.json(
+  {
+    success: false,
+    error,
+  },
+  {
+    status: 500,
+      headers: getCorsHeaders(req),
+  }
+);
 }
 
 if (error) {
   throw new Error(JSON.stringify(error));
 }
 
-    return Response.json({
-      success: true,
-      data,
-    });
+return Response.json(
+  {
+    success: true,
+    data,
+  },
+  {
+      headers: getCorsHeaders(req),
+  }
+);
   } catch (error) {
     console.error(error);
 
-    return Response.json(
-      {
-        success: false,
-        message: 'Failed to send email',
-      },
-      {
-        status: 500,
-      }
-    );
+return Response.json(
+  {
+    success: false,
+    message: 'Failed to send email',
+  },
+  {
+    status: 500,
+       headers: getCorsHeaders(req),
+  }
+);
   }
 }

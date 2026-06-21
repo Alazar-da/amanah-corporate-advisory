@@ -24,7 +24,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   setIsLoading(true)
 
 
-  const response = await fetch('/api/contact', {
+  const response = await fetch('https://amanah-corporate-advisory.vercel.app/api/contact', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
