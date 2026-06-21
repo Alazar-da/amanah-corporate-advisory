@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+
+export const runtime = 'nodejs';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -16,6 +17,7 @@ export async function OPTIONS() {
 }
 
 export async function POST(req: Request) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { name, company, email, phone, service, message } =
       await req.json();
@@ -230,6 +232,6 @@ return Response.json(
 export async function GET() {
   return Response.json({
     success: true,
-    message: 'API is alive',
+    message: 'working',
   });
 }
