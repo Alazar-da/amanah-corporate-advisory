@@ -226,3 +226,10 @@ return Response.json(
 );
   }
 }
+
+export async function GET() {
+  return Response.json({
+    success: true,
+    message: 'API is alive',
+  });
+}
