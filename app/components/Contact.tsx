@@ -55,9 +55,9 @@ const handleSubmit = async (e: React.FormEvent) => {
 };
 
   const contactInfo = [
-    { icon: <FaPhoneAlt />, text: '+971 50 447 6610', href: 'tel:+971504476610' },
+    { icon: <FaPhoneAlt />, text: '+971 50 432 1450', href: 'tel:+971 50 432 1450' },
     { icon: <FaEnvelope />, text: 'info@amanahadvisory.com', href: 'mailto:info@amanahadvisory.com' },
-    { icon: <FaWhatsapp />, text: 'Chat on WhatsApp', href: 'https://wa.me/971504476610' },
+    { icon: <FaWhatsapp />, text: 'Chat on WhatsApp', href: 'https://wa.me/+971504321450' },
     { icon: <FaMapMarkerAlt />, text: 'Dubai World Trade Center', href: '#' },
   ];
 
